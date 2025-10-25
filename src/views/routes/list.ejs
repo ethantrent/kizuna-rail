@@ -1,23 +1,53 @@
 <%- include('../partials/header') %>
 <h1><%- title %></h1>
 
-<div id="filters">
-    Search by Region:
-    <select id="region-filter">
-        <option value="all">All Regions</option>
-        <% regions.forEach((region) => { %>
-            <option value="<%= region %>" <%= query.region === region ? 'selected' : '' %>><%= region.charAt(0).toUpperCase() + region.slice(1) %></option>
-        <% }); %>
-    </select>
+<div id="filters" class="filters-grid">
+    <div class="filter-item">
+        <label for="region-filter">Search by Region:</label>
+        <select id="region-filter">
+            <option value="all">All Regions</option>
+            <% regions.forEach((region) => { %>
+                <option value="<%= region %>" <%= query.region === region ? 'selected' : '' %>><%= region.charAt(0).toUpperCase() + region.slice(1) %></option>
+            <% }); %>
+        </select>
+    </div>
 
-    Search by Season:
-    <select id="season-filter">
-        <option value="all">Any Season</option>
-        <% seasons.forEach((season) => { %>
-            <option value="<%= season %>" <%= query.season === season ? 'selected' : '' %>><%= season.charAt(0).toUpperCase() + season.slice(1) %></option>
-        <% }); %>
-    </select>
+    <div class="filter-item">
+        <label for="season-filter">Search by Season:</label>
+        <select id="season-filter">
+            <option value="all">Any Season</option>
+            <% seasons.forEach((season) => { %>
+                <option value="<%= season %>" <%= query.season === season ? 'selected' : '' %>><%= season.charAt(0).toUpperCase() + season.slice(1) %></option>
+            <% }); %>
+        </select>
+    </div>
 </div>
+
+<script>
+    // Handle filter changes
+    document.getElementById('region-filter').addEventListener('change', function() {
+        const region = this.value;
+        const season = document.getElementById('season-filter').value;
+        updateFilters(region, season);
+    });
+
+    document.getElementById('season-filter').addEventListener('change', function() {
+        const region = document.getElementById('region-filter').value;
+        const season = this.value;
+        updateFilters(region, season);
+    });
+
+    function updateFilters(region, season) {
+        const params = new URLSearchParams();
+        if (region && region !== 'all') {
+            params.set('region', region);
+        }
+        if (season && season !== 'all') {
+            params.set('season', season);
+        }
+        window.location.href = '/routes' + (params.toString() ? '?' + params.toString() : '');
+    }
+</script>
 
 <div class="routes-grid">
     <% routes.forEach(route => { %>

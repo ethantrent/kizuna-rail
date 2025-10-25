@@ -1,3 +1,29 @@
+.filters-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    align-items: end;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.filter-item label {
+    font-weight: 600;
+}
+
+.filter-item select {
+    padding: var(--space-sm);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    background: var(--clr-surface);
+    font-size: 1rem;
+}
+
 .routes-grid {
     display: flex;
     flex-direction: column;
