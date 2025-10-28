@@ -127,6 +127,38 @@
                     "phone": "+44 1632 960324"
                 }
             ]
+        },
+        {
+            "id": "JRWQ76DFS5",
+            "createdAt": "2025-10-28T16:48:35.410Z",
+            "scheduleId": "1",
+            "routeId": "alpine-panorama",
+            "ticketClass": "premium",
+            "selectedDay": "monday",
+            "passengers": [
+                {
+                    "firstName": "Ethan",
+                    "lastName": "Trent",
+                    "email": "ethanjotrent@gmail.com",
+                    "phone": "6414510659"
+                }
+            ]
+        },
+        {
+            "id": "JR8C3MKXBO",
+            "createdAt": "2025-10-28T16:53:42.946Z",
+            "scheduleId": "3",
+            "routeId": "coastal-breeze",
+            "ticketClass": "first",
+            "selectedDay": "monday",
+            "passengers": [
+                {
+                    "firstName": "Ethan",
+                    "lastName": "Trent",
+                    "email": "ethanjotrent@gmail.com",
+                    "phone": "6414510659"
+                }
+            ]
         }
     ],
     "routes": [
@@ -146,14 +178,14 @@
             ],
             "bestSeason": "autumn",
             "operatingMonths": [
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
             ],
             "imageUrl": "/images/routes/alpine-panorama.png",
             "schedules": [
@@ -203,18 +235,18 @@
             ],
             "bestSeason": "summer",
             "operatingMonths": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
             ],
             "imageUrl": "/images/routes/coastal-breeze.png",
             "schedules": [
